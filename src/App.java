@@ -26,6 +26,12 @@ public class App {
 			System.out.println("Título: " + filme.get("title"));
 			System.out.println("Pôster: " + filme.get("image"));
 			System.out.println("Classificação: " + filme.get("imDbRating"));
+			Double classificacao = Double.parseDouble(filme.get("imDbRating"));
+			String[] estrelas = new String[classificacao.intValue()];
+			for (int i = 0; i < classificacao.intValue(); i++) {
+				estrelas[i] = "⭐";
+			}
+			System.out.println(String.join(" ", estrelas));
 			System.out.println();
 		}
 	}
